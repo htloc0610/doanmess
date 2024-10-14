@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //        Nếu muốn chạy activity không thì comment lại
-//        val intent = Intent(this, InforChat::class.java)
-//        startActivity(intent)
+        val intent = Intent(this, InforChat::class.java)
+        startActivity(intent)
     }
 }
