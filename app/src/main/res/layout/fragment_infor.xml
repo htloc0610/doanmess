@@ -85,7 +85,7 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="237dp"
+            android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="80dp"
             android:gravity="center_vertical"
@@ -94,7 +94,7 @@
 
         <TextView
             android:id="@+id/txtCheckDarkMode"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"
             android:gravity="center"
@@ -151,7 +151,7 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="330dp"
+            android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="80dp"
             android:gravity="center_vertical"
@@ -180,7 +180,7 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="236dp"
+            android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="80dp"
             android:gravity="center_vertical"
@@ -189,7 +189,7 @@
 
         <TextView
             android:id="@+id/txtNumberRequest"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"
             android:gravity="center"
@@ -217,7 +217,7 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="236dp"
+            android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="80dp"
             android:gravity="center_vertical"
@@ -226,7 +226,7 @@
 
         <TextView
             android:id="@+id/txtNumberBlock"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"
             android:gravity="center"
