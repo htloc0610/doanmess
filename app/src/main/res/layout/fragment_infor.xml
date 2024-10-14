@@ -83,7 +83,7 @@
             android:id="@+id/imageView2"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="0dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/dark_mode" />
 
@@ -120,7 +120,7 @@
             android:id="@+id/imageView3"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="0dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/user" />
 
@@ -149,7 +149,7 @@
             android:id="@+id/imageView4"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="0dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/rename" />
 
@@ -178,7 +178,7 @@
             android:id="@+id/imageView5"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="0dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/friend" />
 
@@ -215,7 +215,7 @@
             android:id="@+id/imageView6"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="0dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/block" />
 
