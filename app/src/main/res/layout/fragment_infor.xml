@@ -69,7 +69,7 @@
         android:layout_height="60dp"
         android:layout_below="@+id/imgView"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
+        android:layout_centerInParent="true"
         android:layout_marginTop="25dp">
 
 
@@ -106,7 +106,7 @@
         android:layout_height="60dp"
         android:layout_below="@+id/darkMode"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
+        android:layout_centerInParent="true"
         android:layout_marginTop="25dp">
 
 
@@ -135,7 +135,7 @@
         android:layout_height="60dp"
         android:layout_below="@+id/changeAvata"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
+        android:layout_centerInParent="true"
         android:layout_marginTop="25dp">
 
 
@@ -164,7 +164,7 @@
         android:layout_height="60dp"
         android:layout_below="@+id/changeName"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
+        android:layout_centerInParent="true"
         android:layout_marginTop="25dp">
 
 
@@ -201,7 +201,7 @@
         android:layout_height="60dp"
         android:layout_below="@+id/friendRequest"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
+        android:layout_centerInParent="true"
         android:layout_marginTop="25dp">
 
 

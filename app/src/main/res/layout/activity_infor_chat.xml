@@ -13,7 +13,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@+id/imgView"
-      android:layout_alignParentEnd="true"
+      android:layout_centerInParent="true"
       android:layout_marginTop="10dp"
       android:text="Full name"
       android:textAlignment="center"
@@ -48,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_centerInParent="true"
         android:orientation="horizontal">
 
       <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -102,15 +103,14 @@
       android:layout_height="wrap_content"
       android:layout_below="@+id/navBar"
       android:layout_alignParentStart="true"
-      android:layout_marginStart="0dp"
-      android:layout_marginTop="15dp"
+      android:layout_centerInParent="true"
+      android:layout_marginTop="20dp"
       android:orientation="vertical">
 
     <TextView
         android:id="@+id/txtOption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:text="Option"
         android:textSize="25dp"
         android:textStyle="bold" />
@@ -118,15 +118,15 @@
     <FrameLayout
         android:id="@+id/frmTopic"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="15dp">
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp">
 
 
       <ImageView
           android:id="@+id/imgTopic"
           android:layout_width="50dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="20dp"
+          android:layout_marginLeft="10dp"
           android:scaleType="fitCenter"
           app:srcCompat="@drawable/cloud" />
 
@@ -134,7 +134,7 @@
           android:id="@+id/txtTopic"
           android:layout_width="280dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="85dp"
+          android:layout_marginLeft="80dp"
           android:gravity="center_vertical"
           android:text="Topic"
           android:textSize="25dp" />
@@ -144,15 +144,15 @@
     <FrameLayout
         android:id="@+id/frmFastEmotion"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="10dp">
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp">
 
 
       <ImageView
           android:id="@+id/imgFastEmotion"
           android:layout_width="50dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="20dp"
+          android:layout_marginLeft="10dp"
           android:scaleType="fitCenter"
           app:srcCompat="@drawable/thumb" />
 
@@ -160,7 +160,7 @@
           android:id="@+id/txtFastEmotion"
           android:layout_width="280dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="85dp"
+          android:layout_marginLeft="80dp"
           android:gravity="center_vertical"
           android:text="Fast emotion"
           android:textSize="25dp" />
@@ -170,15 +170,15 @@
     <FrameLayout
         android:id="@+id/frmNickName"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="10dp">
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp">
 
 
       <ImageView
           android:id="@+id/imgNickName"
           android:layout_width="50dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="20dp"
+          android:layout_marginLeft="10dp"
           android:scaleType="fitCenter"
           app:srcCompat="@drawable/rename" />
 
@@ -186,7 +186,7 @@
           android:id="@+id/txtNickName"
           android:layout_width="280dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="85dp"
+          android:layout_marginLeft="80dp"
           android:gravity="center_vertical"
           android:text="Nickname"
           android:textSize="25dp" />
@@ -200,15 +200,15 @@
       android:layout_height="wrap_content"
       android:layout_below="@+id/Option"
       android:layout_alignParentStart="true"
-      android:layout_marginStart="0dp"
-      android:layout_marginTop="15dp"
+      android:layout_centerInParent="true"
+      android:layout_marginTop="20dp"
       android:orientation="vertical">
 
     <TextView
         android:id="@+id/txtView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+
         android:text="Another Option"
         android:textSize="25dp"
         android:textStyle="bold" />
@@ -216,15 +216,15 @@
     <FrameLayout
         android:id="@+id/frmNotice"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="15dp">
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp">
 
 
       <ImageView
           android:id="@+id/imgNotice"
           android:layout_width="50dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="20dp"
+          android:layout_marginLeft="10dp"
           android:scaleType="fitCenter"
           app:srcCompat="@drawable/notifications" />
 
@@ -232,7 +232,7 @@
           android:id="@+id/txtNotice"
           android:layout_width="280dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="85dp"
+          android:layout_marginLeft="80dp"
           android:gravity="center_vertical"
           android:text="Notice and music"
           android:textSize="25dp" />
@@ -242,15 +242,15 @@
     <FrameLayout
         android:id="@+id/frmLink"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="10dp">
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp">
 
 
       <ImageView
           android:id="@+id/imgeLink"
           android:layout_width="50dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="20dp"
+          android:layout_marginLeft="10dp"
           android:scaleType="fitCenter"
           app:srcCompat="@drawable/link" />
 
@@ -258,7 +258,7 @@
           android:id="@+id/txtLink"
           android:layout_width="280dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="85dp"
+          android:layout_marginLeft="80dp"
           android:gravity="center_vertical"
           android:text="View files and link"
           android:textSize="25dp" />
@@ -273,15 +273,14 @@
       android:layout_height="wrap_content"
       android:layout_below="@+id/anotherOption"
       android:layout_alignParentStart="true"
-      android:layout_marginStart="0dp"
-      android:layout_marginTop="15dp"
+      android:layout_centerInParent="true"
+      android:layout_marginTop="20dp"
       android:orientation="vertical">
 
     <TextView
         android:id="@+id/txtSupport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:text="Privicy - Support"
         android:textSize="25dp"
         android:textStyle="bold" />
@@ -289,15 +288,15 @@
     <FrameLayout
         android:id="@+id/frmLimit"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="15dp">
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp">
 
 
       <ImageView
           android:id="@+id/imgLimit"
           android:layout_width="50dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="20dp"
+          android:layout_marginLeft="10dp"
           android:scaleType="fitCenter"
           app:srcCompat="@drawable/lock" />
 
@@ -305,7 +304,7 @@
           android:id="@+id/txtLimit"
           android:layout_width="280dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="85dp"
+          android:layout_marginLeft="80dp"
           android:gravity="center_vertical"
           android:text="Limit"
           android:textSize="25dp" />
@@ -315,15 +314,15 @@
     <FrameLayout
         android:id="@+id/frmBlock"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="10dp">
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp">
 
 
       <ImageView
           android:id="@+id/imgBlock"
           android:layout_width="50dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="20dp"
+          android:layout_marginLeft="10dp"
           android:scaleType="fitCenter"
           app:srcCompat="@drawable/block" />
 
@@ -331,7 +330,7 @@
           android:id="@+id/txtBlock"
           android:layout_width="280dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="85dp"
+          android:layout_marginLeft="80dp"
           android:gravity="center_vertical"
           android:text="Block"
           android:textSize="25dp" />
@@ -341,7 +340,7 @@
     <FrameLayout
         android:id="@+id/frmTrash"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:layout_marginTop="10dp">
 
 
@@ -349,7 +348,7 @@
           android:id="@+id/imgTrash"
           android:layout_width="50dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="20dp"
+          android:layout_marginLeft="10dp"
           android:scaleType="fitCenter"
           app:srcCompat="@drawable/trash" />
 
@@ -357,7 +356,7 @@
           android:id="@+id/txtTrash"
           android:layout_width="280dp"
           android:layout_height="match_parent"
-          android:layout_marginLeft="85dp"
+          android:layout_marginLeft="80dp"
           android:gravity="center_vertical"
           android:text="Delete message"
           android:textSize="25dp" />
