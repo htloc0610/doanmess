@@ -132,7 +132,7 @@
 
       <TextView
           android:id="@+id/txtTopic"
-          android:layout_width="220dp"
+          android:layout_width="327dp"
           android:layout_height="match_parent"
           android:layout_marginLeft="85dp"
           android:gravity="center_vertical"
@@ -158,7 +158,7 @@
 
       <TextView
           android:id="@+id/txtFastEmotion"
-          android:layout_width="220dp"
+          android:layout_width="329dp"
           android:layout_height="match_parent"
           android:layout_marginLeft="85dp"
           android:gravity="center_vertical"
@@ -184,7 +184,7 @@
 
       <TextView
           android:id="@+id/txtNickName"
-          android:layout_width="220dp"
+          android:layout_width="327dp"
           android:layout_height="match_parent"
           android:layout_marginLeft="85dp"
           android:gravity="center_vertical"
@@ -230,7 +230,7 @@
 
       <TextView
           android:id="@+id/txtNotice"
-          android:layout_width="220dp"
+          android:layout_width="325dp"
           android:layout_height="match_parent"
           android:layout_marginLeft="85dp"
           android:gravity="center_vertical"
@@ -256,7 +256,7 @@
 
       <TextView
           android:id="@+id/txtLink"
-          android:layout_width="wrap_content"
+          android:layout_width="327dp"
           android:layout_height="match_parent"
           android:layout_marginLeft="85dp"
           android:gravity="center_vertical"
@@ -303,7 +303,7 @@
 
       <TextView
           android:id="@+id/txtLimit"
-          android:layout_width="220dp"
+          android:layout_width="326dp"
           android:layout_height="match_parent"
           android:layout_marginLeft="85dp"
           android:gravity="center_vertical"
@@ -329,7 +329,7 @@
 
       <TextView
           android:id="@+id/txtBlock"
-          android:layout_width="220dp"
+          android:layout_width="323dp"
           android:layout_height="match_parent"
           android:layout_marginLeft="85dp"
           android:gravity="center_vertical"
@@ -355,7 +355,7 @@
 
       <TextView
           android:id="@+id/txtTrash"
-          android:layout_width="220dp"
+          android:layout_width="326dp"
           android:layout_height="match_parent"
           android:layout_marginLeft="85dp"
           android:gravity="center_vertical"
