@@ -94,7 +94,7 @@
 
         <TextView
             android:id="@+id/txtCheckDarkMode"
-            android:layout_width="96dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
             android:gravity="center"
@@ -189,7 +189,7 @@
 
         <TextView
             android:id="@+id/txtNumberRequest"
-            android:layout_width="96dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
             android:gravity="center"
@@ -226,7 +226,7 @@
 
         <TextView
             android:id="@+id/txtNumberBlock"
-            android:layout_width="96dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
             android:gravity="center"
