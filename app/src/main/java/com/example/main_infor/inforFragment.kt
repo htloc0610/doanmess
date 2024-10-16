@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
@@ -24,106 +25,92 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class inforFragment : Fragment() {
 
-    // Khai báo các biến để sử dụng trong Fragment
     private lateinit var imageView: ImageView
     private lateinit var button: FloatingActionButton
-    // Khai báo launcher để nhận kết quả khi chọn ảnh
     private lateinit var imagePickerLauncher: ActivityResultLauncher<Intent>
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment từ XML
         return inflater.inflate(R.layout.fragment_infor, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Tìm các view bằng ID
+        sharedPreferences = requireActivity().getSharedPreferences("UserInfo", Context.MODE_PRIVATE)
+
         val darkMode = view.findViewById<FrameLayout>(R.id.darkMode)
         val changeAvata = view.findViewById<FrameLayout>(R.id.changeAvata)
         val changeName = view.findViewById<FrameLayout>(R.id.changeName)
-        val friendRequest = view.findViewById<FrameLayout>(R.id.friendRequest)
-        val blockList = view.findViewById<FrameLayout>(R.id.blockList)
         val txtName = view.findViewById<TextView>(R.id.txtName)
+        val txtMode = view.findViewById<TextView>(R.id.txtCheckDarkMode)
 
-        // Khởi tạo imageView và button
         imageView = view.findViewById(R.id.imgView)
         button = view.findViewById(R.id.floatingActionButton)
 
-        // Đăng ký bộ nhận kết quả từ ImagePicker
         imagePickerLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
-        ) { result -> // Nhận kết quả khi người dùng chọn ảnh
+        ) { result ->
             if (result.resultCode == AppCompatActivity.RESULT_OK) {
                 val data: Intent? = result.data
-                val uri: Uri? = data?.data // Lấy URI của ảnh đã chọn
-                imageView.setImageURI(uri) // Hiển thị ảnh trong ImageView
+                val uri: Uri? = data?.data
+                imageView.setImageURI(uri)
+                // Lưu URI của hình ảnh vào SharedPreferences
+                saveImageUri(uri.toString())
             }
         }
 
-        // Thiết lập sự kiện click cho button để thay đổi avatar
         button.setOnClickListener {
-            changeAvata() // Gọi hàm changeAvata
+            changeAvata()
         }
 
-        // Thiết lập onClickListener cho các FrameLayout
         darkMode.setOnClickListener {
-            changeBackgroundColor(darkMode, "#D9D9D9", 150) // Thay đổi màu nền
-            changeMode(view) // Gọi hàm changeMode
-        }
-        changeAvata.setOnClickListener {
-            changeBackgroundColor(changeAvata, "#D9D9D9", 150) // Thay đổi màu nền
-            changeAvata() // Gọi hàm changeAvata
-        }
-        changeName.setOnClickListener {
-            changeBackgroundColor(changeName, "#D9D9D9", 150) // Thay đổi màu nền
-            changeNameFunc(view) // Gọi hàm changeNameFunc
-        }
-        friendRequest.setOnClickListener {
-            changeBackgroundColor(friendRequest, "#D9D9D9", 150) // Thay đổi màu nền
-        }
-        blockList.setOnClickListener {
-            changeBackgroundColor(blockList, "#D9D9D9", 150) // Thay đổi màu nền
+            changeBackgroundColor(darkMode, "#D9D9D9", 150)
+            changeMode(view)
         }
 
-        // Thiết lập đổi tên khi click vào txtName
-        txtName.setOnClickListener {
-            changeNameFunc(view) // Gọi hàm changeNameFunc
+        changeAvata.setOnClickListener {
+            changeBackgroundColor(changeAvata, "#D9D9D9", 150)
+            changeAvata()
         }
+
+        changeName.setOnClickListener {
+            changeBackgroundColor(changeName, "#D9D9D9", 150)
+            changeNameFunc(view)
+        }
+
+        txtName.setOnClickListener {
+            changeNameFunc(view)
+        }
+
+        // Đọc và hiển thị thông tin khi khởi động
+        loadData()
     }
 
-    // Hàm để thay đổi tên người dùng
     private fun changeNameFunc(view: View) {
-        val edtChangeName = view.findViewById<EditText>(R.id.edtChangeName) // Tìm EditText
-        val txtName = view.findViewById<TextView>(R.id.txtName) // Tìm TextView
+        val edtChangeName = view.findViewById<EditText>(R.id.edtChangeName)
+        val txtName = view.findViewById<TextView>(R.id.txtName)
 
-        // Đặt văn bản hiện tại của txtName vào EditText
         edtChangeName.setText(txtName.text.toString())
-
-        // Đưa con trỏ chuột đến cuối văn bản
         edtChangeName.setSelection(edtChangeName.text.length)
 
-        // Ẩn TextView và hiển thị EditText
         txtName.visibility = View.INVISIBLE
         edtChangeName.visibility = View.VISIBLE
-
-        // Đưa con trỏ chuột (focus) vào EditText
         edtChangeName.requestFocus()
 
-        // Hiển thị bàn phím
         val imm = view.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(edtChangeName, InputMethodManager.SHOW_IMPLICIT)
 
-        // Xử lý nhấn phím Enter
         edtChangeName.setOnKeyListener { _, keyCode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-                // Cập nhật nội dung TextView và ẩn EditText
                 txtName.text = edtChangeName.text.toString()
                 edtChangeName.visibility = View.INVISIBLE
                 txtName.visibility = View.VISIBLE
 
-                // Ẩn bàn phím
+                // Lưu tên người dùng
+                saveData(txtName.text.toString())
+
                 imm.hideSoftInputFromWindow(edtChangeName.windowToken, 0)
 
                 true
@@ -133,37 +120,62 @@ class inforFragment : Fragment() {
         }
     }
 
-    // Hàm để thay đổi chế độ tối
     private fun changeMode(view: View) {
         val txtMode = view.findViewById<TextView>(R.id.txtCheckDarkMode)
-        // Chuyển đổi trạng thái của chế độ tối
         if (txtMode.text.toString() == "Off") {
-            txtMode.text = "On" // Bật chế độ tối
+            txtMode.text = "On"
         } else {
-            txtMode.text = "Off" // Tắt chế độ tối
+            txtMode.text = "Off"
         }
+        // Lưu trạng thái chế độ tối
+        saveMode(txtMode.text.toString())
     }
 
-    // Hàm để thay đổi avatar
     private fun changeAvata() {
-        // Khởi chạy ImagePicker
         ImagePicker.with(this)
-            .crop()  // Crop image (Optional), Check Customization for more option
-            .compress(1024)  // Final image size will be less than 1 MB (Optional)
-            .maxResultSize(1080, 1080)  // Final image resolution will be less than 1080 x 1080 (Optional)
-            .createIntent { intent -> // Tạo intent để chọn ảnh
-                imagePickerLauncher.launch(intent) // Khởi chạy launcher với intent
+            .crop()
+            .compress(1024)
+            .maxResultSize(1080, 1080)
+            .createIntent { intent ->
+                imagePickerLauncher.launch(intent)
             }
     }
 
-    // Hàm để thay đổi màu nền cho view
     private fun changeBackgroundColor(view: View, color: String, duration: Long) {
         val background = view.background
-        // Lấy màu nền hiện tại
         val currentColor = if (background is ColorDrawable) background.color else Color.TRANSPARENT
 
-        view.setBackgroundColor(Color.parseColor(color)) // Thay đổi màu nền
-        // Trở về màu nền cũ sau một khoảng thời gian
+        view.setBackgroundColor(Color.parseColor(color))
         view.postDelayed({ view.setBackgroundColor(currentColor) }, duration)
+    }
+
+    // Hàm lưu trạng thái chế độ tối
+    private fun saveMode(mode: String) {
+        sharedPreferences.edit().putString("DarkMode", mode).apply()
+    }
+
+    // Hàm lưu tên người dùng
+    private fun saveData(name: String) {
+        sharedPreferences.edit().putString("UserName", name).apply()
+    }
+
+    // Hàm lưu URI của hình ảnh
+    private fun saveImageUri(uri: String) {
+        sharedPreferences.edit().putString("ImageUri", uri).apply()
+    }
+
+    // Hàm đọc và hiển thị thông tin
+    private fun loadData() {
+        val savedName = sharedPreferences.getString("UserName", "User")
+        val savedMode = sharedPreferences.getString("DarkMode", "Off")
+        val savedImageUri = sharedPreferences.getString("ImageUri", null)
+
+        view?.findViewById<TextView>(R.id.txtName)?.text = savedName
+        view?.findViewById<TextView>(R.id.txtCheckDarkMode)?.text = savedMode
+
+        // Hiển thị hình ảnh nếu có URI đã lưu
+        savedImageUri?.let {
+            imageView.setImageURI(Uri.parse(it))
+        }
     }
 }

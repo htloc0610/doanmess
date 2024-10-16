@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -41,6 +42,18 @@ class InforChat : AppCompatActivity() {
 
         frmNotice.setOnClickListener {
             changeBackgroundColor(frmNotice, "#D9D9D9", 150)
+            AlertDialog.Builder(this)
+                .setTitle("Unnoticed")
+                .setMessage("Do you want to unnoticed?")
+                .setPositiveButton("Yes") { dialog, which ->
+                    // Xử lý khi người dùng chọn "Có"
+                    // Thực hiện thao tác block ở đây
+                }
+                .setNegativeButton("No") { dialog, which ->
+                    // Đóng hộp thoại khi người dùng chọn "Không"
+                    dialog.dismiss()
+                }
+                .show()
         }
 
         frmLink.setOnClickListener {
@@ -49,14 +62,50 @@ class InforChat : AppCompatActivity() {
 
         frmLimit.setOnClickListener {
             changeBackgroundColor(frmLimit, "#D9D9D9", 150)
+            AlertDialog.Builder(this)
+                .setTitle("Limit")
+                .setMessage("Do you want to limit?")
+                .setPositiveButton("Yes") { dialog, which ->
+                    // Xử lý khi người dùng chọn "Có"
+                    // Thực hiện thao tác block ở đây
+                }
+                .setNegativeButton("No") { dialog, which ->
+                    // Đóng hộp thoại khi người dùng chọn "Không"
+                    dialog.dismiss()
+                }
+                .show()
         }
 
         frmBlock.setOnClickListener {
             changeBackgroundColor(frmBlock, "#D9D9D9", 150)
+            AlertDialog.Builder(this)
+                .setTitle("Block")
+                .setMessage("Do you want to block?")
+                .setPositiveButton("Yes") { dialog, which ->
+                    // Xử lý khi người dùng chọn "Có"
+                    // Thực hiện thao tác block ở đây
+                }
+                .setNegativeButton("No") { dialog, which ->
+                    // Đóng hộp thoại khi người dùng chọn "Không"
+                    dialog.dismiss()
+                }
+                .show()
         }
 
         frmTrash.setOnClickListener {
             changeBackgroundColor(frmTrash, "#D9D9D9", 150)
+            AlertDialog.Builder(this)
+                .setTitle("Delete")
+                .setMessage("Do you want to delete?")
+                .setPositiveButton("Yes") { dialog, which ->
+                    // Xử lý khi người dùng chọn "Có"
+                    // Thực hiện thao tác block ở đây
+                }
+                .setNegativeButton("No") { dialog, which ->
+                    // Đóng hộp thoại khi người dùng chọn "Không"
+                    dialog.dismiss()
+                }
+                .show()
         }
     }
 
