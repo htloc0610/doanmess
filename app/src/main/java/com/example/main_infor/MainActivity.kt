@@ -17,6 +17,6 @@ class MainActivity : AppCompatActivity() {
 
 //        Nếu muốn chạy activity không thì comment lại
 //        val intent = Intent(this, InforChat::class.java)
-//        startActivity(intent)
+//       startActivity(intent)
     }
 }
